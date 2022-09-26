@@ -1,15 +1,18 @@
 {
   "collectionName": "components_coins_coins",
   "info": {
-    "displayName": "coins"
+    "displayName": "coins",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "gold": {
-      "type": "integer"
+      "type": "integer",
+      "default": 0
     },
     "energy": {
-      "type": "integer"
+      "type": "integer",
+      "default": 0
     }
   }
 }

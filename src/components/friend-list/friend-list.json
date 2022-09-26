@@ -5,11 +5,5 @@
     "description": ""
   },
   "options": {},
-  "attributes": {
-    "friends": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::user-data.user-data"
-    }
-  }
+  "attributes": {}
 }

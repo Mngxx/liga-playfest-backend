@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * user-data service
+ * user-game service
  */
 
 const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreService('api::user-data.user-data');
+module.exports = createCoreService('api::user-game.user-game');

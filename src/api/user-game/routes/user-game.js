@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * user-data router
+ * user-game router
  */
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
-module.exports = createCoreRouter('api::user-data.user-data');
+module.exports = createCoreRouter('api::user-game.user-game');
