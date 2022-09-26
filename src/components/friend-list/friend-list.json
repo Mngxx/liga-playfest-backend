@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_friend_list_friend_lists",
+  "info": {
+    "displayName": "friendList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "friends": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::user-data.user-data"
+    }
+  }
+}
