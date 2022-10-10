@@ -15,7 +15,7 @@ module.exports = async (policyContext, config, { strapi }) => {
   if (!entry_user) {
     throw new ApplicationError("User ID cannot be found.", { user_id });
   }
-  if (data.receiver) {
+  if (data) {
     const entry_receiver = await strapi.db
       .query("plugin::users-permissions.user")
       .findOne({ where: { id: data.receiver } });
