@@ -24,7 +24,6 @@ module.exports = async (policyContext, config, { strapi }) => {
       },
     }
   );
-  console.log(entry.sender.id);
 
   if (!entry) {
     throw new ApplicationError(
@@ -35,10 +34,13 @@ module.exports = async (policyContext, config, { strapi }) => {
   if (
     entry.sender.id !== Number(user_id || entry.receiver.id !== Number(user_id))
   ) {
-    throw new ApplicationError("User ID must be associated with the User Link.", {
-      user_id,
-      entry,
-    });
+    throw new ApplicationError(
+      "User ID must be associated with the User Link.",
+      {
+        user_id,
+        entry,
+      }
+    );
   }
   return true;
 };
