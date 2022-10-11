@@ -24,7 +24,6 @@ module.exports = async (policyContext, config, { strapi }) => {
       },
     }
   );
-  console.log(entry);
   if (!entry) {
     throw new ApplicationError(
       "User Link does not exist. Please check your parameters.",
