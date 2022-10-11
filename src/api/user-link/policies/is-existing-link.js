@@ -24,7 +24,7 @@ module.exports = async (policyContext, config, { strapi }) => {
       },
     }
   );
-
+  console.log(entry);
   if (!entry) {
     throw new ApplicationError(
       "User Link does not exist. Please check your parameters.",
@@ -32,7 +32,8 @@ module.exports = async (policyContext, config, { strapi }) => {
     );
   }
   if (
-    entry.sender.id !== Number(user_id || entry.receiver.id !== Number(user_id))
+    entry.sender.id !== Number(user_id) &&
+    entry.receiver.id !== Number(user_id)
   ) {
     throw new ApplicationError(
       "User ID must be associated with the User Link.",

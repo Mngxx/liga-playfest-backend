@@ -15,14 +15,16 @@ module.exports = async (policyContext, config, { strapi }) => {
   if (!entry_user) {
     throw new ApplicationError("User ID cannot be found.", { user_id });
   }
-  if ("receiver" in data) {
-    const entry_receiver = await strapi.db
-      .query("plugin::users-permissions.user")
-      .findOne({ where: { id: data.receiver } });
-    if (!entry_receiver) {
-      throw new ApplicationError("Receiver ID cannot be found.", {
-        vieweduser_id,
-      });
+  if (data) {
+    if ("receiver" in data) {
+      const entry_receiver = await strapi.db
+        .query("plugin::users-permissions.user")
+        .findOne({ where: { id: data.receiver } });
+      if (!entry_receiver) {
+        throw new ApplicationError("Receiver ID cannot be found.", {
+          vieweduser_id,
+        });
+      }
     }
   }
   if (vieweduser_id) {
@@ -35,6 +37,5 @@ module.exports = async (policyContext, config, { strapi }) => {
       });
     }
   }
-  console.log("check existing user")
   return true;
 };

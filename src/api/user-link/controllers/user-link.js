@@ -64,7 +64,7 @@ module.exports = createCoreController(
 
       if (status !== "pending" && status !== "blocked") {
         return ctx.badRequest(
-          "User links can only be have pending and blocked as status. Please check your parameters"
+          "User links with certain roles can only be pending or blocked as status. Please check your parameters"
         );
       }
       if (role !== "sender" && role !== "receiver") {
